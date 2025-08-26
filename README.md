@@ -1,4 +1,9 @@
-# BusinessBERT
+# BusinessBERT-clean
+
+This repository is a clone of [BusinessBERT](https://github.com/pnborchert/BusinessBERT). The same finetuning setup as in the original is used to finetune a new BusinessBERT model. This model is published in [BusinessBERT2](https://github.com/yannikmaassen/BusinessBERT2).
+
+The following paragraphs contain the original README of BusinessBERT.
+
 Industry-sensitive Language Model for Business. The model is available on HuggingFace: https://huggingface.co/pborchert/BusinessBERT
 
 ```python
