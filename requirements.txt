@@ -1,0 +1,12 @@
+transformers==4.55.4
+datasets==4.0.0
+accelerate==1.10.1
+tokenizers==0.21.4
+nltk==3.9.1
+PyYAML==6.0.2
+tqdm==4.67.1
+
+torch==2.8.0
+scikit-learn==1.7.1
+safetensors==0.6.2
+seqeval==1.2.2

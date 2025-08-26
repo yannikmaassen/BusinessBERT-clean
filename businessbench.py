@@ -77,7 +77,7 @@ def main(args):
         do_train=args["do_train"],
         do_eval=args["do_eval"],
         do_predict=args["do_predict"],
-        evaluation_strategy=args["evaluation_strategy"], 
+        eval_strategy=args["evaluation_strategy"],
         per_device_train_batch_size=args["batch_size"],
         per_device_eval_batch_size=args["batch_size"],
         gradient_accumulation_steps=args["grad_accum"],
