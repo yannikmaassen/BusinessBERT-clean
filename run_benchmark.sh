@@ -1,5 +1,5 @@
-for task in "risk"
-# "news" "secfilings" "fiqa" "finphrase" "stocktweets"
+for task in "risk" "secfilings" "stocktweets" "fiqa"
+# "news" "finphrase"
 do
     for model in "pborchert/BusinessBERT"
     # "bert-base-uncased" "ProsusAI/finbert" "yiyanghkust/finbert-pretrain"
