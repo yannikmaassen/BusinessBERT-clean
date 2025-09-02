@@ -18,7 +18,7 @@ def get_params(**kwargs):
         "grad_accum":4,
         "epochs":20,
         "do_lower_case":True,
-        "path":("reuters21578", "ModHayes"),
+        "path": ("ucirvine/reuters21578", "ModHayes"),
         "target":"topics",
     }
 
