@@ -18,7 +18,7 @@ def get_params(**kwargs):
         "grad_accum":1,
         "epochs":10,
         "do_lower_case":True,
-        "path":('financial_phrasebank', 'sentences_allagree'),
+        "path":('takala/financial_phrasebank', 'sentences_allagree'),
     }
 
     # user defined parameters
