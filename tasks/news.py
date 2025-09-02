@@ -56,7 +56,7 @@ class DatasetNews(Dataset):
         return encoded
 
 def load_file(seed, path, target):
-    dataset = datasets.load_dataset(path[0], path[1])
+    dataset = datasets.load_dataset(path[0], path[1], trust_remote_code=True)
     df_train = dataset["train"].to_pandas()
     df_test = dataset["test"].to_pandas()
 
