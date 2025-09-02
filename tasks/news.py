@@ -14,7 +14,7 @@ def get_params(**kwargs):
     params = {
         "lr":1e-5,
         "max_len":512,
-        "batch_size":4,
+        "batch_size":32,
         "grad_accum":4,
         "epochs":20,
         "do_lower_case":True,
