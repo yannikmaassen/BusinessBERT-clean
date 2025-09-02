@@ -56,7 +56,7 @@ class DatasetFinPhrase(Dataset):
 
 def load_file(seed, path):
     # df = pd.read_parquet(path)
-    df = datasets.load_dataset(path[0], path[1])["train"].to_pandas() 
+    df = datasets.load_dataset(path[0], path[1], trust_remote_code=True)["train"].to_pandas()
     num_labels = len(df["label"].unique())
 
     # mimick 10-fold cv split 
