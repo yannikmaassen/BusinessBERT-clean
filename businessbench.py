@@ -81,7 +81,6 @@ def main(args):
         per_device_train_batch_size=64,
         per_device_eval_batch_size=64,
         bf16=True,
-        fp16=True,
         gradient_accumulation_steps=args["grad_accum"],
         learning_rate=args["lr"],
         weight_decay=args["weight_decay"],
