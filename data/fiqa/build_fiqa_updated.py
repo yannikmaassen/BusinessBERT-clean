@@ -25,4 +25,4 @@ df["sentiment_score"] = pd.to_numeric(df["sentiment_score"], errors="coerce")
 df = df.dropna(subset=["sentence", "snippets", "target", "sentiment_score"])
 df = df[["sentence", "snippets", "target", "sentiment_score"]].sample(frac=1).reset_index(drop=True)
 
-df.to_json("fiqa_train.json", orient="records")
+df.to_json("train.json", orient="records")
