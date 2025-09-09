@@ -13,7 +13,7 @@ def get_params(**kwargs):
     # default parameters
     params = {
         "lr":1e-5,
-        "max_len":512,
+        "max_len":256,
         "batch_size":32,
         "grad_accum":4,
         "epochs":20,
