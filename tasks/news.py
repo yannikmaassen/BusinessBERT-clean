@@ -17,8 +17,6 @@ def get_params(**kwargs):
         "batch_size":32,
         "grad_accum":4,
         "epochs":20,
-        "bf16":False,
-        "fp16":True,
         "do_lower_case":True,
         "path": ("ucirvine/reuters21578", "ModHayes"),
         "target":"topics",
