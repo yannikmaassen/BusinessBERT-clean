@@ -45,6 +45,7 @@ parser.add_argument('--load_best_model_at_end', dest='load_best_model_at_end', h
 parser.add_argument('--metric_for_best_model', help='metric_for_best_model', type=str, default="loss")
 
 parser.add_argument('--bf16', help='use bf16', type=bool, default=False)
+parser.add_argument('--fp16', help='use fp16', type=bool, default=False)
 
 args=vars(parser.parse_args())
 
@@ -82,12 +83,12 @@ def main(args):
         do_predict=args["do_predict"],
         eval_strategy=args["evaluation_strategy"],
         per_device_train_batch_size=args["batch_size"],
-        per_device_eval_batch_size=args.get("batch_size"),
+        per_device_eval_batch_size=args("batch_size"),
         bf16=args["bf16"],
-#        fp16=False,
-#        optim="adamw_torch_fused",
-        dataloader_num_workers=8,
-        dataloader_pin_memory=True,
+        fp16=args["fp16"],
+        optim="adamw_torch_fused",
+#        dataloader_num_workers=8,
+#        dataloader_pin_memory=True,
         gradient_accumulation_steps=args["grad_accum"],
         learning_rate=args["lr"],
         weight_decay=args["weight_decay"],
