@@ -86,7 +86,6 @@ def main(args):
         per_device_eval_batch_size=args.get("batch_size"),
         bf16=args["bf16"],
         fp16=args["fp16"],
-#        optim="adamw_torch_fused",
         dataloader_num_workers=4,
         dataloader_pin_memory=True,
         gradient_accumulation_steps=args["grad_accum"],
