@@ -1,6 +1,6 @@
 import torch 
 from torch.utils.data import Dataset
-from transformers import BertForSequenceClassification, RobertaForSequenceClassification, BertTokenizer, RobertaTokenizer
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, BertTokenizer, RobertaTokenizer, BertTokenizerFast, RobertaTokenizerFast
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -120,9 +120,9 @@ def get_model(model_name, num_labels):
 
 def get_tokenizer(model_name, do_lower_case):
     if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT"]:
-        tokenizer = BertTokenizer.from_pretrained(model_name, do_lower_case=do_lower_case, use_auth_token=True)
+        tokenizer = BertTokenizerFast.from_pretrained(model_name, do_lower_case=do_lower_case, use_auth_token=True)
     elif model_name.startswith("roberta"):
-        tokenizer = RobertaTokenizer.from_pretrained(model_name, do_lower_case=do_lower_case)
+        tokenizer = RobertaTokenizerFast.from_pretrained(model_name, do_lower_case=do_lower_case)
     else:
         raise NotImplementedError(f"Model '{model_name}' is not supported.")
     return tokenizer
