@@ -83,7 +83,7 @@ def main(args):
         do_predict=args["do_predict"],
         eval_strategy=args["evaluation_strategy"],
         per_device_train_batch_size=args["batch_size"],
-        per_device_eval_batch_size=args("batch_size"),
+        per_device_eval_batch_size=args.get("batch_size"),
 #        bf16=args["bf16"],
 #        fp16=args["fp16"],
 #        optim="adamw_torch_fused",
