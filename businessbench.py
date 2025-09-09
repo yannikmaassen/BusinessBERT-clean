@@ -43,6 +43,9 @@ parser.add_argument('--warmup_ratio', help='warmup_ratio', type=float, default=0
 parser.add_argument('--warmup_steps', help='warmup_steps', type=int, default=0)
 parser.add_argument('--load_best_model_at_end', dest='load_best_model_at_end', help='load_best_model_at_end', action="store_true")
 parser.add_argument('--metric_for_best_model', help='metric_for_best_model', type=str, default="loss")
+
+parser.add_argument('--bf16', help='use bf16', type=bool, default=False)
+
 args=vars(parser.parse_args())
 
 def main(args):
@@ -78,9 +81,9 @@ def main(args):
         do_eval=args["do_eval"],
         do_predict=args["do_predict"],
         eval_strategy=args["evaluation_strategy"],
-        per_device_train_batch_size=32,
-        per_device_eval_batch_size=64,
-#        bf16=True,
+        per_device_train_batch_size=args["batch_size"],
+        per_device_eval_batch_size=args.get("batch_size"),
+        bf16=args["bf16"],
 #        fp16=False,
 #        optim="adamw_torch_fused",
         dataloader_num_workers=8,
