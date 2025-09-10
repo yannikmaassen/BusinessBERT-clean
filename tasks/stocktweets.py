@@ -17,7 +17,7 @@ def get_params(**kwargs):
         "grad_accum":1,
         "epochs":10,
         "do_lower_case":True,
-        "path":"./data/tweets/tweets_clean.csv",
+        "path":"../tweets/tweets_clean.xlsx",
         "do_early_stopping":True,
     }
 
@@ -55,7 +55,7 @@ class DatasetTweets(Dataset):
         return encoded
 
 def load_file(seed, path):
-    df = pd.read_csv(path)
+    df = pd.read_excel(path)
 
     # compute num_labels
     num_labels = len(df["sentiment"].unique())    
