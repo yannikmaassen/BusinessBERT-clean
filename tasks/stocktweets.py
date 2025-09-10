@@ -17,7 +17,7 @@ def get_params(**kwargs):
         "grad_accum":1,
         "epochs":10,
         "do_lower_case":True,
-        "path":"../tweets/tweets_clean.xlsx",
+        #"path":"../tweets/tweets_clean.xlsx",
         "do_early_stopping":True,
     }
 
