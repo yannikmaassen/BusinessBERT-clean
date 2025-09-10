@@ -17,7 +17,7 @@ def get_params(**kwargs):
         "grad_accum":1,
         "epochs":10,
         "do_lower_case":True,
-        #"path":"../tweets/tweets_clean.xlsx",
+        "path":"../tweets/tweets_clean.csv",
         "do_early_stopping":True,
     }
 
@@ -55,13 +55,15 @@ class DatasetTweets(Dataset):
         return encoded
 
 def load_file(seed, path):
-    df = pd.read_excel(path)
+    df = pd.read_csv(path, sep=";", header=0)
+    mapping = {"negative": 0, "neutral": 1, "positive": 2}
+    df["label"] = df["sentiment"].astype(str).str.strip().str.lower().map(mapping).astype("int64")
 
     # compute num_labels
-    num_labels = len(df["sentiment"].unique())    
+    num_labels = len(df["label"].unique())
 
     # mimick 10-fold cv split 
-    X, y = np.asarray(df["text"]), np.asarray(df["sentiment"])
+    X, y = np.asarray(df["text"]), np.asarray(df["label"])
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.9, stratify=y, random_state=seed)
     X_train, X_valid, y_train, y_valid = train_test_split(X_train, y_train, train_size=0.8, stratify=y_train, random_state=seed)
 
