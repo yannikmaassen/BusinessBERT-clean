@@ -1,4 +1,4 @@
-for task in "stocktweets"
+for task in "stocktweets" "news"
 # "news" "finphrase" "risk" "secfilings" "fiqa" "stocktweets"
 do
     for model in "yannikmaassen/BusinessBERT2-v1-70000" "yannikmaassen/BusinessBERT2-v1-1000000"
