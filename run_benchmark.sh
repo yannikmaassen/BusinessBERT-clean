@@ -1,4 +1,4 @@
-for task in "secfilings" "finphrase" "risk" "stocktweets" "fiqa"
+for task in "risk" "stocktweets"
 # "news" "finphrase" "risk" "secfilings" "fiqa" "stocktweets"
 do
     for model in "yannikmaassen/BusinessBERT2-v1-70000" "yannikmaassen/BusinessBERT2-v1-1000000"
