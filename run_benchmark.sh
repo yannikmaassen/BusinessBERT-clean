@@ -1,12 +1,12 @@
-for task in "news"
-# "finphrase" "risk" "secfilings" "stocktweets" "fiqa"
+for task in "secfilings" "finphrase" "risk" "stocktweets" "fiqa"
+# "news" "finphrase" "risk" "secfilings" "fiqa" "stocktweets"
 do
-    for model in "pborchert/BusinessBERT"
-     #"bert-base-uncased" "ProsusAI/finbert" "yiyanghkust/finbert-pretrain"
+    for model in "yannikmaassen/BusinessBERT2-v1-70000" "yannikmaassen/BusinessBERT2-v1-1000000"
+    # "pborchert/BusinessBERT" "bert-base-uncased" "yiyanghkust/finbert-pretrain" "ProsusAI/finbert"
     do
         for seed in 42
         do
-            python businessbench.py \
+            python3 businessbench.py \
             --task_name $task \
             --model_name $model \
             --seed $seed

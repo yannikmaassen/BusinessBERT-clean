@@ -109,7 +109,7 @@ def get_dataset(train, valid, test, tokenizer, max_len, num_labels):
     return data_train, data_valid, data_test
 
 def get_model(model_name, num_labels):
-    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT"]:
+    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000"]:
         model = BertForSequenceClassification.from_pretrained(model_name, use_auth_token=True, num_labels=num_labels, ignore_mismatched_sizes=True, problem_type="multi_label_classification")
     elif model_name.startswith("roberta"):
         model = RobertaForSequenceClassification.from_pretrained(model_name, num_labels=num_labels, problem_type="multi_label_classification")
@@ -118,8 +118,8 @@ def get_model(model_name, num_labels):
     return model
 
 def get_tokenizer(model_name, do_lower_case):
-    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT"]:
-        tokenizer = BertTokenizerFast.from_pretrained(model_name, do_lower_case=do_lower_case, use_auth_token=True)
+    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000"]:
+        tokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased", do_lower_case=do_lower_case, use_auth_token=True)
     elif model_name.startswith("roberta"):
         tokenizer = RobertaTokenizerFast.from_pretrained(model_name, do_lower_case=do_lower_case)
     else:
