@@ -1,7 +1,7 @@
-for task in "stocktweets" "news"
+for task in "finphrase" "risk" "secfilings" "fiqa" "stocktweets" "news"
 # "news" "finphrase" "risk" "secfilings" "fiqa" "stocktweets"
 do
-    for model in "yannikmaassen/BusinessBERT2-v1-70000" "yannikmaassen/BusinessBERT2-v1-1000000"
+    for model in "yannikmaassen/BusinessBERT2-v2-78000" "yannikmaassen/BusinessBERT2-v2-1000000"
     # "pborchert/BusinessBERT" "bert-base-uncased" "yiyanghkust/finbert-pretrain" "ProsusAI/finbert"
     do
         for seed in 42

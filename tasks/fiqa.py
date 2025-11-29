@@ -70,7 +70,7 @@ def get_dataset(train, valid, test, tokenizer, max_len):
     return data_train, data_valid, data_test
 
 def get_model(model_name):
-    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000"]:
+    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000", "yannikmaassen/BusinessBERT2-v2-78000" "yannikmaassen/BusinessBERT2-v2-1000000"]:
         model = BertForSequenceClassification.from_pretrained(model_name, use_auth_token=True, problem_type="regression", num_labels=1, ignore_mismatched_sizes=True)
     elif model_name.startswith("roberta"):
         model = RobertaForSequenceClassification.from_pretrained(model_name, problem_type="regression", num_labels=1)
@@ -79,7 +79,7 @@ def get_model(model_name):
     return model
 
 def get_tokenizer(model_name, do_lower_case):
-    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000"]:
+    if model_name in ["bert-base-uncased", "ProsusAI/finbert", "yiyanghkust/finbert-pretrain", "pborchert/BusinessBERT", "yannikmaassen/BusinessBERT2-v1-70000", "yannikmaassen/BusinessBERT2-v1-1000000", "yannikmaassen/BusinessBERT2-v2-78000" "yannikmaassen/BusinessBERT2-v2-1000000"]:
         tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=do_lower_case, use_auth_token=True)
     elif model_name.startswith("roberta"):
         tokenizer = RobertaTokenizer.from_pretrained(model_name, do_lower_case=do_lower_case)
